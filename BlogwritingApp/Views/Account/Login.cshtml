@@ -1,0 +1,35 @@
+﻿@model BlogwritingApp.Models.UserTable
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<h2>Login</h2>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            @using (Html.BeginForm())
+            {
+                <div style="color:red">
+                    @Html.ValidationSummary()
+                </div>
+
+
+                <div class="row">
+                   <b> Enter the username:</b>@Html.EditorFor(m => m.UserName)
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div><br />
+                <div class="row">
+                    <b>Enter the Password:</b>@Html.EditorFor(m => m.UserPassword)
+                    @Html.ValidationMessageFor(m => m.UserPassword)
+                </div><br />
+                <div class="row">
+                    <button class="btn btn-danger">Login</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

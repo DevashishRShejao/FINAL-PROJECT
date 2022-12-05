@@ -1,0 +1,46 @@
+================================BlogWriting================================
+
+Blog table:-
+
+CREATE TABLE [dbo].[BlogTable](
+	[BlogId] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[TravelDate] [date] NOT NULL,
+	[Details] [varchar](max) NOT NULL,
+	[Image] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[BlogId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+=====================================================================================================================
+Image Table :-
+
+CREATE TABLE [dbo].[ImageTable](
+	[EntryId] [int] IDENTITY(1,1) NOT NULL,
+	[BlogId] [int] NOT NULL,
+	[ImageLink] [nvarchar](max) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[EntryId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+=========================================================================================================
+User Table:-
+
+CREATE TABLE [dbo].[UserTable](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [nvarchar](50) NOT NULL,
+	[UserPassword] [nvarchar](50) NOT NULL,
+	[UserEmailAddress] [nvarchar](50) NOT NULL,
+	[Address] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[UserName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]

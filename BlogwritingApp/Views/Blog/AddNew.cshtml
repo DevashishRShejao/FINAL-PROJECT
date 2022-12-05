@@ -1,0 +1,40 @@
+﻿@model BlogwritingApp.Models.BlogTable
+
+@{
+    ViewBag.Title = "AddNew";
+    if(Session["CurrentUser"] !=null)
+    {
+        ViewBag.Name = (Session["CurrentUser"] as BlogwritingApp.Models.UserTable).UserName;
+    }
+}
+
+
+
+    <hr />
+    <h2>Hi @ViewBag.Name Post UR Blog Here!!!</h2>
+   <div class="container">
+            @using (Html.BeginForm())
+            {
+                <div class="columl">
+                @Html.HiddenFor(m => m.UserId)
+                <p>
+                    Enter the Title: @Html.EditorFor(m => m.Title)
+                </p>
+                <p>
+                    Enter the Details: @Html.EditorFor(m => m.Details)
+                </p>
+
+                <p>
+                    Enter the Date:
+                    @Html.EditorFor(m => m.TravelDate)
+                </p>
+
+                <p>
+                    Enter the Images: @Html.EditorFor(m => m.Image)
+                </p>
+
+
+                <button class="btn btn-danger">Save Blog</button>
+                    </div>
+            }
+        </div>

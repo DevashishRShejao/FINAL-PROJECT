@@ -1,0 +1,25 @@
+﻿@model List<BlogwritingApp.Models.BlogTable>
+
+@{
+
+    ViewBag.Title = "AllBlogs";
+}
+<div class="cont">
+    @foreach (var item in Model)
+    {
+    <div class="rows">
+
+        <h1 style="color:aqua"><i>@item.Title</i></h1>
+        <hr />
+        <div class="pro">
+            <img src="@item.Image"><br />
+            <h3> <p> My Travalling Date is :- @item.TravelDate</p></h3>
+        </div><h2><i>@item.Details</i></h2>
+        @*@Html.ActionLink("Update", "EditBlogs", new { id = item.BlogId }, new { @class = "btn btn-primary ms-3" })
+        @Html.ActionLink("Delete", "Delete", new { id = item.BlogId }, new { @class = "btn btn-danger" })*@
+
+    </div>
+
+
+    }
+</div>

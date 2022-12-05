@@ -1,0 +1,79 @@
+﻿@model BlogwritingApp.Models.UserTable
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style type="text/css">
+    li{
+        background-color:aqua;
+        color:black;
+        margin-right:20px;
+        border-radius:5px;
+        
+    }
+    .main {
+        background-image: url('../../Assetss/Top-10-benefits-of-travelling-–-Learn-why-travelling-is-good-for-you.jpg');
+       
+        height:500px;
+        width:100%;
+        
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+
+        
+
+        
+
+    }
+
+</style>
+<div>
+    @if (Request.IsAuthenticated)
+    {
+        <h1>Welcome User :</h1><span>@Html.Encode(User.Identity.Name)</span>
+        @Html.ActionLink("Log Out", "Logout", null, new { @class = "btn btn-secondary" })
+
+    }
+  </div>  
+    
+        <div class="data">
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+                <a class="navbar-brand">Kantar Blogging</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li id="ma" class="nav-item " style="color:red">
+                            @Html.ActionLink("Sign In", "Login")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Sign Up", "RegisterNew")
+                        </li>
+
+                        <li class="nav-item">
+                            @Html.ActionLink("Viewbolg", "AllBlogs", "Blog")
+                        </li>
+
+                        <li class="nav-item">
+                            @Html.ActionLink("Add New", "AddNew", "Blog")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Blogs", "userBlogs", "Blog")
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+        <div class="main">
+
+        </div>
+       
+        
+
+    
+
+
+

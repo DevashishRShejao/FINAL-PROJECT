@@ -1,0 +1,19 @@
+﻿.cont
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rows
+{
+    border-radius: 10px;
+    background-color: aqua;
+   
+}
+
+img 
+{
+    height: 150px;
+    width: 150px;
+}

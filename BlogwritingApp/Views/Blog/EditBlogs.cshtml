@@ -1,0 +1,28 @@
+﻿@model BlogwritingApp.Models.BlogTable
+
+@{
+    ViewBag.Title = "EditBlogs";
+}
+
+<h2>EditBlogs</h2>
+
+
+<h2 style="text-align:center;color:indianred">Edit Blogs</h2>
+<div class="container">
+    @using (Html.BeginForm("UpdateBlogs", "Blog"))
+    {
+        <div class="row">
+            @Html.HiddenFor(m => m.UserId)<br />
+            <label>Blog Id : @Html.DisplayFor(m => m.BlogId)@Html.HiddenFor(m => m.BlogId)</label>
+            <label>Re-Enter the title</label><br />
+            @Html.EditorFor(b => b.Title)<br />
+            <label>Re-Enter the Image</label><br />
+            @Html.EditorFor(b => b.Image)<br />
+            <label>Re-Enter the Experience</label><br />
+            @Html.EditorFor(b => b.Details)<br />
+           
+            <button class="btn btn-primary text-warning ms-4">Save Changes</button>
+        </div>
+    }
+</div>
+

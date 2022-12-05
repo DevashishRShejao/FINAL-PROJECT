@@ -1,0 +1,13 @@
+﻿
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.columl {
+    margin:3px;
+    border-radius: 10px;
+    background-color: aqua;
+    width: 400px;
+}

@@ -1,0 +1,53 @@
+﻿@model BlogwritingApp.Models.UserTable
+
+@{
+    ViewBag.Title = "RegisterNew";
+}
+
+<h2>RegisterNew</h2>
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        <div style="color:red">@Html.ValidationSummary()</div>
+        <div class="row">
+            Enter The UserName:@Html.EditorFor(m => m.UserName)
+            <p style="color:Red">
+                @Html.ValidationMessageFor(m => m.UserName)
+            </p>
+        </div>
+
+        <div style="color:red">@Html.ValidationSummary()</div>
+        <div class="row">
+            Enter The PassWord:@Html.EditorFor(m => m.UserPassword)
+            <p style="color:Red">
+                @Html.ValidationMessageFor(m => m.UserPassword)
+            </p>
+        </div>
+
+        <div style="color:red">@Html.ValidationSummary()</div>
+        <div class="row">
+            REEnter The PassWord:@Html.EditorFor(m => m.RePassword)
+            <p style="color:Red">
+                @Html.ValidationMessageFor(m => m.RePassword)
+            </p>
+        </div>
+
+        <div style="color:red">@Html.ValidationSummary()</div>
+        <div class="row">
+            Enter The EmailAddress:@Html.EditorFor(m => m.UserEmailAddress)
+            <p style="color:Red">
+                @Html.ValidationMessageFor(m => m.UserEmailAddress)
+            </p>
+        </div>
+
+        <div style="color:red">@Html.ValidationSummary()</div>
+        <div class="row">
+            Enter The Address:@Html.EditorFor(m => m.Address)
+            <p style="color:Red">
+                @Html.ValidationMessageFor(m => m.Address)
+            </p>
+        </div>
+        <button class="btn btn-danger">Register</button>
+    }
+</div>
