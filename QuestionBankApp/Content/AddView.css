@@ -1,0 +1,18 @@
+﻿body {
+    background-image: url('.\assest\book1.jpg');
+}
+
+.container {
+    background-image: url('.\assest\book1.jpg');
+}
+
+.row{
+    height:50%;
+    width:50%;
+}
+
+.Mid {
+    background-image: url('.~\'QuestionBankApp\assest\book1.jpg');
+    height:100%;
+    width:100%;
+}

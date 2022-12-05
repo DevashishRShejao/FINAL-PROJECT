@@ -1,0 +1,56 @@
+﻿@model  QuestionBankApp.Models.Question_Table1
+
+@{
+    ViewBag.Title = "Add";
+    var data = ViewBag.SubjectType as List<SelectListItem>;
+}
+
+<style type="text/css">
+    /* li {
+        background-color: aqua;
+        color: black;
+        margin-right: 20px;
+        border-radius: 5px;
+    }*/
+
+    .main {
+        background-image: url('../../assest/book1.jpg');
+        height: 700px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+   .row
+    {
+        box-shadow: 10px 10px 8px #888888;
+    }
+    
+</style>
+
+<div class="main">
+    <div>
+    <h2 style="text-align:center;color:orange">Insert Question</h2>
+</div>
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <label class="text-bg-danger"><h2>Enter the Question</h2></label><br /><br />
+                @Html.EditorFor(m => m.Question)<br />
+                <label class="text-bg-success"><h2>Enter the Keyword of questions</h2></label><br /><br />
+                @Html.EditorFor(m => m.Keyword)<br />
+                <label class="text-bg-danger"><h2>Enter the Subject Type</h2></label><br /><br />
+                @Html.DropDownListFor(m => m.SubjectType, data)<br />
+                <label class="text-bg-success"><h2>Enter the Option1</h2></label><br /><br />
+                @Html.EditorFor(m => m.Option1)<br />
+                <label class="text-bg-danger"><h2>Enter the Option2</h2></label><br /><br />
+                @Html.EditorFor(m => m.Option2)<br />
+                <label class="text-bg-success"><h2>Enter the Option3</h2></label><br /><br />
+                @Html.EditorFor(m => m.Option3)<br />
+                <label class="text-bg-danger"><h2>Enter the Option4</h2></label><br /><br />
+                @Html.EditorFor(m => m.Option4)<br />
+                <button class="btn btn-primary mt-3">Add Questions</button>
+            </div>
+
+        }
+    </div>
+</div>
